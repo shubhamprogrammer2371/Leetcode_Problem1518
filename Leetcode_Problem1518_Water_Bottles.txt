@@ -1,0 +1,32 @@
+int numWaterBottles(int numBottles, int numExchange){
+    int drinks = numBottles,exchange=0;
+    while(numBottles >= numExchange)
+    {
+        numBottles -= numExchange;
+        exchange++;
+        if(numBottles == 0 || numBottles < numExchange)
+        {
+            drinks += exchange;
+            numBottles += exchange;
+            exchange = 0;
+        }
+    }
+    return drinks;
+}
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+int numWaterBottles(int numBottles, int numExchange){
+    int drinks = numBottles,exchange=0;
+    while(numBottles >= numExchange)
+    {
+        numBottles = numBottles - numExchange + 1;
+        drinks++;
+    }
+    return drinks;
+}
